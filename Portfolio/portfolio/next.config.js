@@ -5,8 +5,11 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  env: {
-    SITE_URL: process.env.SITE_URL || 'https://nikhil.dev',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '' : '',
+  // Disable server-side features for static export
+  experimental: {
+    appDir: false,
   },
 }
 
